@@ -884,9 +884,50 @@
             </label>
           </div>
 
-          <button type="submit" class="btn-submit">Prenota il mio posto →</button>
+          <button type="submit" class="btn-submit" id="btn-submit">Prenota il mio posto →</button>
           <p class="form-note">Nessun impegno. Puoi disdire in qualsiasi momento.</p>
+          <div id="form-success" style="display:none; margin-top:16px; background:var(--verde-light); border-left:4px solid var(--verde); border-radius:8px; padding:14px 16px; font-size:0.92rem; color:var(--verde);">
+            ✅ <strong>Prenotazione ricevuta!</strong> Ti confermiamo via messaggio.
+          </div>
+          <div id="form-error" style="display:none; margin-top:16px; background:#fff0f0; border-left:4px solid #c0392b; border-radius:8px; padding:14px 16px; font-size:0.92rem; color:#c0392b;">
+            ⚠️ Qualcosa è andato storto. Riprova o scrivici direttamente.
+          </div>
         </form>
+
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/a/macros/wellnesstown.it/s/AKfycbyD725J6gIY28knjkhIDXp1Zbm9tgS78rjL8xfR6w5sApY7Dbx3vtb1CMftCsjLy75B/exec';
+
+    document.querySelector('form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit');
+      btn.textContent = 'Invio in corso…';
+      btn.disabled = true;
+
+      const payload = {
+        nome_genitore:    document.getElementById('nome').value,
+        cognome_genitore: document.getElementById('cognome').value,
+        email:            document.getElementById('email').value,
+        telefono:         document.getElementById('telefono').value,
+        nome_figlio:      document.getElementById('nome-figlio').value,
+        anno_nascita:     document.getElementById('anno').value
+      };
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        });
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-error').style.display = 'none';
+        this.reset();
+        btn.textContent = 'Inviato ✓';
+      } catch (err) {
+        document.getElementById('form-error').style.display = 'block';
+        btn.textContent = 'Prenota il mio posto →';
+        btn.disabled = false;
+      }
+    });
+  </script>
       </div>
     </div>
   </section>
