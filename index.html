@@ -568,6 +568,51 @@
       transform: translateY(-1px);
     }
 
+    .privacy-box {
+      margin-top: 20px;
+      background: var(--grigio-light);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 4px;
+    }
+
+    .privacy-text {
+      font-size: 0.75rem;
+      color: #888;
+      line-height: 1.55;
+      margin-bottom: 12px !important;
+    }
+
+    .privacy-text strong { color: #555; }
+    .privacy-text em { font-style: normal; color: var(--verde); }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--verde);
+      cursor: pointer;
+    }
+
+    .checkbox-label span {
+      font-size: 0.8rem;
+      color: var(--grigio);
+      line-height: 1.5;
+    }
+
+    .checkbox-label a {
+      color: var(--verde);
+      text-decoration: underline;
+    }
+
     .form-note {
       font-size: 0.76rem;
       color: #bbb;
@@ -832,6 +877,13 @@
             </div>
           </div>
 
+          <div class="privacy-box">
+            <label class="checkbox-label">
+              <input type="checkbox" name="privacy" id="privacy" required />
+              <span>Consento il trattamento dei dati ai sensi della <a href="https://wellnesstown.it/privacy" target="_blank" rel="noopener">privacy policy</a>. *</span>
+            </label>
+          </div>
+
           <button type="submit" class="btn-submit">Prenota il mio posto →</button>
           <p class="form-note">Nessun impegno. Puoi disdire in qualsiasi momento.</p>
         </form>
@@ -842,9 +894,11 @@
   <!-- FOOTER -->
   <footer>
     <strong>Scuola Calcio Appiae Sport · Wellness Town</strong><br>
-    Via Francesco Giangiacomo 55, Roma EUR<br>
     In collaborazione con OMC Roma<br><br>
-    Per info: Marco · Stefano
+<span style="font-size:0.75rem; opacity:0.5;">
+      APPIAE SPORT SSD ARL — VIA FRANCESCO GIANGIACOMO 55 — 00147 ROMA<br>
+      P. IVA 14752581009
+    </span>
   </footer>
 
 </body>
