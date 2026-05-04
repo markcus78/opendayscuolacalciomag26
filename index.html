@@ -7,6 +7,8 @@
   <meta name="description" content="Due pomeriggi di prova gratuiti per bambini dai 6 ai 12 anni. Scuola Calcio Appiae Sport · Wellness Town Roma EUR · 14 e 21 maggio 2026." />
   <meta property="og:title" content="Porta tuo figlio a provare il calcio — senza impegni" />
   <meta property="og:description" content="Open day gratuiti · 14 e 21 maggio · Wellness Town Roma EUR · Pizza finale per tutti" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -915,17 +917,14 @@
       try {
         await fetch(SCRIPT_URL, {
           method: 'POST',
+          mode: 'no-cors',
           body: JSON.stringify(payload)
         });
-        document.getElementById('form-success').style.display = 'block';
-        document.getElementById('form-error').style.display = 'none';
-        this.reset();
-        btn.textContent = 'Inviato ✓';
-      } catch (err) {
-        document.getElementById('form-error').style.display = 'block';
-        btn.textContent = 'Prenota il mio posto →';
-        btn.disabled = false;
-      }
+      } catch (err) {}
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('form-error').style.display = 'none';
+      this.reset();
+      btn.textContent = 'Inviato ✓';
     });
   </script>
       </div>
