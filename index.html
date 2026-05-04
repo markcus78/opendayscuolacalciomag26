@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Day Scuola Calcio — Appiae Sport · Wellness Town</title>
+  <meta name="description" content="Due pomeriggi di prova gratuiti per bambini dai 6 ai 12 anni. Scuola Calcio Appiae Sport · Wellness Town Roma EUR · 14 e 21 maggio 2026." />
+  <meta property="og:title" content="Porta tuo figlio a provare il calcio — senza impegni" />
+  <meta property="og:description" content="Open day gratuiti · 14 e 21 maggio · Wellness Town Roma EUR · Pizza finale per tutti" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:        #1a6b3c;
+      --verde-dark:   #145230;
+      --verde-mid:    #2d8a54;
+      --verde-light:  #e8f5ee;
+      --giallo:       #f5c400;
+      --testo:        #111;
+      --grigio:       #555;
+      --grigio-light: #f4f4f4;
+      --radius:       14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      color: var(--testo);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    /* ─── STICKY MOBILE CTA ─── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 12px 16px;
+      background: var(--verde-dark);
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.18);
+    }
+
+    .sticky-cta a {
+      display: block;
+      background: var(--giallo);
+      color: var(--testo);
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) { .sticky-cta { display: block; } }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: var(--verde);
+      padding: 20px 20px 16px;
+      text-align: center;
+    }
+
+    .logo-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .logo-bar img.logo-appiae {
+      height: 48px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .logo-bar img.logo-omc {
+      height: 48px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 8px;
+      padding: 5px 10px;
+    }
+
+    .collab-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--verde);
+      color: #fff;
+      text-align: center;
+      padding: 44px 20px 64px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 6vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 620px;
+      margin: 0 auto 18px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--giallo);
+    }
+
+    .hero .sub {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      max-width: 500px;
+      margin: 0 auto 32px;
+      opacity: 0.88;
+      line-height: 1.6;
+    }
+
+    .btn-hero {
+      display: inline-block;
+      background: var(--giallo);
+      color: var(--testo);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 17px 40px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+    }
+
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .trust-bar {
+      margin-top: 22px;
+      font-size: 0.82rem;
+      opacity: 0.65;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── WAVE ─── */
+    .wave { display: block; line-height: 0; background: var(--verde); }
+    .wave svg { display: block; width: 100%; }
+
+    /* ─── SEZIONI GENERALI ─── */
+    .section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 52px 20px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde);
+      background: var(--verde-light);
+      border-radius: 99px;
+      padding: 4px 14px;
+      margin-bottom: 14px;
+    }
+
+    .section h2 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--testo);
+    }
+
+    .section p {
+      color: var(--grigio);
+      margin-bottom: 12px;
+      font-size: 1.02rem;
+    }
+
+    /* ─── PROBLEMA ─── */
+    .problema { background: var(--grigio-light); }
+
+    .problema .section { text-align: left; }
+
+    .problema h2 { color: var(--testo); }
+
+    .problema p strong { color: var(--testo); }
+
+    /* ─── SOLUZIONE ─── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .feature-card {
+      background: var(--verde-light);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      border-top: 4px solid var(--verde);
+    }
+
+    .feature-card .icon { font-size: 1.6rem; margin-bottom: 10px; }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--verde);
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--grigio);
+      margin: 0;
+    }
+
+    /* ─── POZZOLANA ─── */
+    .pozzolana-box {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 24px;
+      background: #fff8e1;
+      border-left: 5px solid var(--giallo);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+    }
+
+    .pozz-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .pozz-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pozz-item strong {
+      display: block;
+      font-size: 0.97rem;
+      color: var(--testo);
+      margin-bottom: 4px;
+    }
+
+    .pozz-item p {
+      font-size: 0.88rem;
+      color: var(--grigio);
+      margin: 0;
+    }
+
+    /* ─── COME FUNZIONA ─── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      background: var(--verde);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .step-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--testo);
+      margin-bottom: 4px;
+    }
+
+    .step-body p { font-size: 0.92rem; color: var(--grigio); margin: 0; }
+
+    .cta-mid {
+      display: inline-block;
+      margin-top: 32px;
+      background: var(--verde);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-mid:hover { background: var(--verde-mid); }
+
+    /* ─── DATE ─── */
+    .date-bg { background: var(--verde); }
+
+    .date-bg .section { text-align: center; }
+
+    .date-bg h2 { color: #fff; }
+
+    .date-bg .section-label {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    .date-cards {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .date-card {
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      flex: 1 1 220px;
+      max-width: 280px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .date-card .giorno {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .date-card .data {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .date-card .orario {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
+
+    .date-card .luogo {
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    .badge-target {
+      display: inline-block;
+      background: var(--giallo);
+      color: var(--testo);
+      font-weight: 700;
+      border-radius: 99px;
+      padding: 8px 22px;
+      font-size: 0.92rem;
+      margin-top: 28px;
+    }
+
+    /* ─── PIZZA ─── */
+    /* ─── PIZZA ─── */
+    .pizza-section {
+      background: var(--giallo);
+      text-align: center;
+      padding: 52px 20px;
+    }
+
+    .pizza-section .pizza-emoji {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .pizza-section h2 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--testo);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .pizza-section p {
+      font-size: 1.05rem;
+      color: #333;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    details {
+      background: var(--grigio-light);
+      border-radius: 10px;
+      padding: 18px 20px;
+      cursor: pointer;
+    }
+
+    details[open] { background: var(--verde-light); }
+
+    summary {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--testo);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--verde);
+      flex-shrink: 0;
+      font-weight: 400;
+    }
+
+    details[open] summary::after { content: '−'; }
+
+    details p {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--grigio);
+    }
+
+    /* ─── FORM ─── */
+    .form-bg { background: var(--grigio-light); }
+
+    .form-wrap {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 32px rgba(0,0,0,0.09);
+      padding: 40px 36px;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .form-wrap h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--verde);
+      margin-bottom: 6px;
+    }
+
+    .form-wrap .form-sub {
+      font-size: 0.9rem;
+      color: var(--grigio);
+      margin-bottom: 28px;
+    }
+
+    .form-divider {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 22px 0 16px;
+    }
+
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e5e5;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--testo);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid #d8d8d8;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--testo);
+      background: #fff;
+      transition: border-color 0.18s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--verde);
+    }
+
+    .select-wrap { position: relative; }
+
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--grigio);
+      pointer-events: none;
+      font-size: 0.9rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 17px;
+      background: var(--verde);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-submit:hover {
+      background: var(--verde-mid);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: 0.76rem;
+      color: #bbb;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--verde-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    footer strong { color: #fff; }
+
+    /* ─── MOBILE PADDING BOTTOM (per sticky CTA) ─── */
+    @media (max-width: 640px) {
+      body { padding-bottom: 72px; }
+      .form-wrap { padding: 28px 18px; }
+      .date-cards { flex-direction: column; align-items: center; }
+      .date-card { max-width: 100%; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta">
+    <a href="#form">Prenota il posto di tuo figlio →</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-bar">
+      <img src="logo-appiae.png" alt="Appiae Sport" class="logo-appiae" />
+      <img src="logo-omc.jpg" alt="OMC Roma" class="logo-omc" />
+    </div>
+    <p class="collab-tag">Scuola Calcio Appiae Sport · Wellness Town Roma EUR · in collaborazione con OMC Roma</p>
+  </header>
+
+  <!-- HERO — above the fold -->
+  <section class="hero">
+    <h1>A tuo figlio piace il calcio?<br><em>Scoprilo senza impegni.</em></h1>
+    <p class="sub">Due pomeriggi di prova gratuiti per bambini dai 6 ai 12 anni — in un impianto serio, con istruttori veri, e pizza finale per tutti.</p>
+    <a href="#form" class="btn-hero">Prenota il posto adesso →</a>
+    <p class="trust-bar">Wellness Town · il centro sportivo più grande di Roma Sud</p>
+  </section>
+
+  <div class="wave">
+    <svg viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,35 C480,75 960,0 1440,35 L1440,0 L0,0 Z" fill="#1a6b3c"/>
+    </svg>
+  </div>
+
+  <!-- PROBLEMA -->
+  <section class="problema">
+    <div class="section">
+      <span class="section-label">Il problema</span>
+      <h2>Iscrivere tuo figlio a uno sport è una scommessa.</h2>
+      <p>Magari non gli piace dopo tre settimane. Magari si annoia, si demotiva, o semplicemente non è il momento giusto. E tu ti ritrovi ad aver pagato mesi di quota per qualcosa che finisce in un cassetto.</p>
+      <p><strong>Lo abbiamo visto succedere decine di volte.</strong> Ed è esattamente per questo che abbiamo creato gli open day.</p>
+    </div>
+  </section>
+
+  <!-- SOLUZIONE -->
+  <div class="section">
+    <span class="section-label">La soluzione</span>
+    <h2>Prima prova. Poi decidi.</h2>
+    <p>Nessun modulo di iscrizione. Nessun abbonamento. Solo tuo figlio, un pallone, un pomeriggio sul campo — con istruttori della Scuola Calcio Appiae Sport.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🏟️</div>
+        <h3>Impianto qualificato</h3>
+        <p>Il campo di calcio in uno degli impianti sportivi più grandi di Roma.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">👨‍🏫</div>
+        <h3>Istruttori veri</h3>
+        <p>Staff tecnico della Scuola Calcio Appiae Sport, in collaborazione con OMC Roma.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🙌</div>
+        <h3>Zero impegno</h3>
+        <p>Vieni, guarda, prova. Nessuna firma, nessun vincolo, nessuna pressione.</p>
+      </div>
+      <div class="feature-card" style="border-top-color: var(--giallo); background: #fff8e1;">
+        <div class="icon">🍕</div>
+        <h3>Pizza per tutti a fine campo</h3>
+        <p>Al termine dell'allenamento offriamo la pizza — per i bambini e per i genitori.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POZZOLANA -->
+  <div class="section">
+    <span class="section-label">Il campo</span>
+    <h2>Perché il campo in terra è il posto migliore per imparare.</h2>
+    <p>Il nostro campo è in <strong>pozzolana</strong> — la terra rossa che per decenni ha formato i calciatori italiani. Non è una limitazione: è un vantaggio tecnico vero.</p>
+    <div class="pozzolana-box">
+      <div class="pozz-item">
+        <div class="pozz-icon">🎯</div>
+        <div>
+          <strong>Sviluppa la tecnica di base</strong>
+          <p>Su un fondo naturale il pallone risponde in modo meno prevedibile rispetto al sintetico. Il bambino impara ad adattarsi, a leggere il rimbalzo, a controllare con più attenzione. Chi impara qui, si trova a suo agio su qualsiasi superficie.</p>
+        </div>
+      </div>
+      <div class="pozz-item">
+        <div class="pozz-icon">🧠</div>
+        <div>
+          <strong>Il gioco rallenta, la testa lavora</strong>
+          <p>La pozzolana riduce la velocità del pallone e dell'azione. Per un bambino alle prime armi è un vantaggio: ha più tempo per pensare, correggersi e capire cosa sta facendo. Meno fretta, più apprendimento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COME FUNZIONA -->
+  <section class="problema">
+    <div class="section">
+      <span class="section-label">Come funziona</span>
+      <h2>Tre passi, niente di più.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Prenota il posto</h3>
+            <p>Compila il form qui sotto con i dati tuoi e di tuo figlio. Ti confermiamo via messaggio.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Porta tuo figlio in campo</h3>
+            <p>Il 14 o il 21 maggio, dalle 17:00 alle 18:30. Basta le scarpe da ginnastica.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Se gli piace, ti diciamo noi come iscriverlo</h3>
+            <p>Nessuna pressione. Se vuole andare avanti, trovi tutte le informazioni sulla scuola calcio.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#form" class="cta-mid">Prenota il posto →</a>
+    </div>
+  </section>
+
+  <!-- DATE -->
+  <section class="date-bg">
+    <div class="section">
+      <span class="section-label">Quando</span>
+      <h2 style="color:#fff;">Le date degli open day</h2>
+      <div class="date-cards">
+        <div class="date-card">
+          <div class="giorno">Prima data</div>
+          <div class="data">14 maggio 2026</div>
+          <div class="orario">🕔 17:00 – 18:30</div>
+          <div class="luogo">Wellness Town · Via F. Giangiacomo 55, Roma EUR</div>
+        </div>
+        <div class="date-card">
+          <div class="giorno">Seconda data</div>
+          <div class="data">21 maggio 2026</div>
+          <div class="orario">🕔 17:00 – 18:30</div>
+          <div class="luogo">Wellness Town · Via F. Giangiacomo 55, Roma EUR</div>
+        </div>
+      </div>
+      <div class="badge-target">Per bambini nati tra il 2014 e il 2021 · 6–12 anni</div>
+    </div>
+  </section>
+
+  <!-- PIZZA -->
+  <section class="pizza-section">
+    <span class="pizza-emoji">🍕</span>
+    <h2>E dopo il campo… pizza per tutti.</h2>
+    <p>A fine allenamento offriamo la pizza a tutti i bambini — e ai genitori. Perché un pomeriggio bello si chiude bene.</p>
+  </section>
+
+  <!-- FAQ -->
+  <div class="section">
+    <span class="section-label">Domande frequenti</span>
+    <h2>Hai dubbi? Ecco le risposte.</h2>
+    <div class="faq-list">
+      <details>
+        <summary>È gratuito?</summary>
+        <p>Sì, l'open day è completamente gratuito. Non devi pagare nulla per partecipare.</p>
+      </details>
+      <details>
+        <summary>Mio figlio non ha mai fatto calcio. Può venire lo stesso?</summary>
+        <p>Assolutamente sì — è fatto proprio per loro. Non serve nessuna esperienza pregressa. L'obiettivo è scoprire se il calcio gli piace.</p>
+      </details>
+      <details>
+        <summary>Cosa deve portare mio figlio?</summary>
+        <p>Solo le scarpe da ginnastica e tanta voglia di correre. Nient'altro.</p>
+      </details>
+      <details>
+        <summary>Se a mio figlio piace, come mi iscrivo alla scuola calcio?</summary>
+        <p>Ti daremo tutte le informazioni sul posto al termine dell'open day. Nessuna pressione: puoi prenderti tutto il tempo che vuoi per decidere.</p>
+      </details>
+      <details>
+        <summary>Posso venire a entrambe le date?</summary>
+        <p>Puoi scegliere la data che preferisci. Se vuoi partecipare a entrambe, scrivici e lo valutiamo insieme.</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <section class="form-bg" id="form">
+    <div class="section" style="padding-top: 20px;">
+      <div class="form-wrap">
+        <h2>Prenota il posto di tuo figlio</h2>
+        <p class="form-sub">⚡ I posti sono limitati — meglio prenotare subito. Ricevi conferma via messaggio.</p>
+
+        <form>
+          <div class="form-divider">Dati del genitore</div>
+
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome_genitore" placeholder="Mario" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cognome">Cognome</label>
+            <input type="text" id="cognome" name="cognome_genitore" placeholder="Rossi" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="mario.rossi@email.it" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+39 333 000 0000" required />
+          </div>
+
+          <div class="form-divider">Dati del bambino</div>
+
+          <div class="form-group">
+            <label for="nome-figlio">Nome del bambino</label>
+            <input type="text" id="nome-figlio" name="nome_figlio" placeholder="Luca" required />
+          </div>
+
+          <div class="form-group">
+            <label for="anno">Anno di nascita</label>
+            <div class="select-wrap">
+              <select id="anno" name="anno_nascita" required>
+                <option value="" disabled selected>Seleziona l'anno</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">Prenota il mio posto →</button>
+          <p class="form-note">Nessun impegno. Puoi disdire in qualsiasi momento.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Scuola Calcio Appiae Sport · Wellness Town</strong><br>
+    Via Francesco Giangiacomo 55, Roma EUR<br>
+    In collaborazione con OMC Roma<br><br>
+    Per info: Marco · Stefano
+  </footer>
+
+</body>
+</html>
